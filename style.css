@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+:root {
+   --font-style: 'Nunito Sans', sans-serif;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #131315;
+    font-family: var(--font-style);
+}
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 500px;
+    width: 100%;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #242026;
+    box-shadow: 0 15px 25px rgba(143, 124, 236, 0.7);
+    border-radius: 16px;
+}
+
+.wrapper h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.form form .error-text {
+    color: #c44653;
+    background-color: #f8d7da;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #f5c6cb;
+    display: none;
+}
+
+.form .field input {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.form .field label {
+    position: relative;
+    left: 0;
+    top: -60px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.form .field input:focus~label,
+.form .field input:valid~label {
+    top: -85px;
+    left: 0;
+    color: #8F7CEC;
+    font-size: 12px;
+}
+
+#submit {
+    padding: 10px 20px;
+    color: #8F7CEC;
+    background-color: #242026;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    border: 1px solid #8F7CEC;
+    margin: auto;
+}
+
+#submit:hover {
+    background: #8F7CEC;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #8F7CEC, 0 0 25px #8F7CEC, 0 0 50px #8F7CEC, 0 0 100px #8F7CEC;
+}
+
+.button-form {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.link {
+    font-size: 14px;
+    text-decoration: none;
+    color: #CBBDDB;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+}
+
+.link a {
+    margin: auto;
+    color: #8F7CEC;
+    text-decoration: none;
+}
+
+.form form .field i{
+    position: absolute;
+    right: 15px;
+    color: #8F7CEC;
+    top: 63%;
+    left: 88%;
+    transform: translateY(-10%);
+    cursor: pointer;
+}
+
+.form form .field i.active::before{
+    content: "\f070";
+    color: #ccc;
+}
+
+/* Users CSS Code */
+
+.users {
+    padding: 30px 30px;
+}
+
+.users header,
+.users-list a  {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px ;
+    justify-content: space-between;
+    border-bottom: 1px solid #dddddd;
+}
+
+.wrapper img {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.users header img{
+    height: 50px;
+    width: 50px;
+  }
+
+:is(.users, .users-list) .content {
+    display: flex;
+    align-items: center;
+}
+
+:is(.users, .users-list) .content .details {
+    color: rgb(233, 220, 220);
+    margin-left: 20px;
+}
+
+:is(.users, .users-list) .details span{
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+
+.users header .content img {
+    height: 70px;
+    width: 70px;
+}
+
+.users header .logout {
+    padding: 7px 15px;
+    color: #CBBDDB;
+    font-size: 17px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    border: 1px solid #8F7CEC;
+    margin: auto;
+    border-radius: 5px;
+    margin-right: 12px;
+}
+
+.users header .logout:hover {
+    background: #8F7CEC;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #8F7CEC, 0 0 25px #8F7CEC, 0 0 50px #8F7CEC, 0 0 100px #8F7CEC;
+}
+
+.users .search {
+    margin: 20px 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.users .search .text {
+    font-size: 18px;
+}
+
+.users .search input {
+    position: absolute;
+    height: 42px;
+    width: calc(100% - 50px);
+    border: 1px solid #ccc;
+    padding: 0 13px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.users .search input.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.users .search input.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.users .search button {
+    width: 47px;
+    height: 42px;
+    border: none;
+    outline: none;
+    color: #8F7CEC;
+    background: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 0 5px 5px 0;
+}
+
+.users .search button.active {
+    color: #8F7CEC;
+    background: #fff;
+}
+
+.users .search button.active{
+    background: #8F7CEC;
+    color: #fff;
+    transition: all 0.2s ease;
+  }
+
+  .users .search button.active i::before{
+    content: "\f00d";
+  }
+
+
+  .search button.active i::before{
+    content: '\f00d';
+  }
+
+.users-list {
+    max-height: 350px;
+    overflow-y: auto;
+    color: #bbbbc9;
+    font-weight: 700;
+}
+.wrapper img{
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .users header img{
+    height: 50px;
+    width: 50px;
+  }
+
+.users-list, .chat-box {
+    scrollbar-width: none;  /* Firefox */
+}
+
+.users-list a {
+    page-break-after: 10px;
+    margin-bottom: 20px;
+    border-bottom-color:#8F7CEC;
+    text-decoration: none;
+}
+
+.users-list a:last-child {
+    border-bottom: none;
+    margin-bottom: 0px;
+}
+
+
+.users-list a img{
+    height: 40px;
+    width: 40px;
+  }
+
+.users-list a .details p{
+    color: #bbbbc9 ;
+}
+
+.users-list a .status-dot {
+    font-size: 12px;
+    color: #468669;
+    padding-left: 110px;
+}
+/* we use this class name to show offline status using PHP */
+.users-list a .status-dot.offline{
+    color: #ccc;
+} 
+
+/* Chat Area Coding CSS */
+
+.chat-area header {
+    display: flex;
+    align-items: center;
+    padding: 18px 30px;
+    color: #dddddd;
+}
+
+.chat-area header .back-icon {
+    font-size: 22px;
+    color: #8F7CEC;
+}
+
+.chat-area header img {
+    height: 50px;
+    width: 50px;
+    margin: 0 10px;
+}
+
+.chat-area header span{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.chat-box{
+    position: relative;
+    min-height: 500px;
+    max-height: 500px;
+    border-radius: 20px;
+    overflow-y: auto;
+    padding: 10px 30px 20px 30px;
+    background: #ccc;
+    box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%),
+                inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+  }
+  .chat-box .text{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: calc(100% - 50px);
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+.chat-box .chat{
+    margin: 15px 0;
+}
+.chat-box .chat p{
+    word-wrap: break-word;
+    padding: 8px 16px;
+    box-shadow: 0 0 32px rgb(0 0 0 / 8%)
+                0 16px 16px -16px rgb(0 0 0 / 10%);
+}
+.chat-box .outgoing {
+    display: flex;
+}
+
+.outgoing .details{
+   margin-left: auto;
+   max-width: calc(100% - 130px) ; 
+}
+
+.outgoing .details p{
+    background: #8F7CEC ;
+    color: #fff;
+    border-radius: 18px 18px 0 18px;
+    margin: 0.05px;
+}
+
+.chat-box .incoming{
+    display: flex;
+    align-items: flex-end;
+}
+
+.chat-box .incoming img{
+    height: 35px;
+    width: 35px;
+    max-width: calc(100% - 130px);
+}
+.incoming .details {
+    margin-left: 10px;
+    margin-right: auto;
+
+}
+.incoming .details p{
+    background: #fff ;
+    color: #000;
+    border-radius: 18px 18px 18px 0px;
+    margin: 0.05px;
+} 
+.chat-area .typing-area {
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.typing-area input { 
+    height: 45px;
+    width: calc(100% - 58px);
+    font-size: 18px;
+    border: 1px solid #ccc;
+    padding: 0 13px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.typing-area button {
+    width: 55px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #8F7CEC;
+    font-size: 19px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
